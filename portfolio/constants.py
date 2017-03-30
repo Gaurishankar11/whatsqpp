@@ -1,0 +1,7 @@
+CATEGORY_STATUS_ACTIVE = 'ACTIVE'
+CATEGORY_STATUS_INACTIVE = 'INACTIVE'
+
+CATEGORY_STATUS_CHOICES = (
+                    (CATEGORY_STATUS_ACTIVE,'Active'),
+                    (CATEGORY_STATUS_INACTIVE,'In Active')
+                )

@@ -1,0 +1,31 @@
+from django.db import models
+
+status = (
+    ('1','1'),
+    ('0','0'),   
+)
+
+
+PROJECT_IMAGES_PATH = 'media'
+# Create your models here.
+class Project(models.Model):
+    project_id			=       models.AutoField(primary_key=True, editable=False)
+    project_name 		=       models.TextField(null=False,blank=False)
+    project_description =       models.TextField(null=True,blank=True)
+    project_image       =       models.ImageField("Image",upload_to=PROJECT_IMAGES_PATH,max_length=500, default=None)
+    project_url		    =       models.URLField(null=True,blank=True)
+    created_date       	=       models.DateTimeField(null=True,blank=True,auto_now_add=True)
+    updated_date		=       models.DateTimeField(null=True,blank=True,auto_now=True)
+    is_active    		=       models.CharField(max_length=1,default="1",choices=status)
+    def __unicode__(self):
+    	return unicode(self.project_id)
+
+class Technology(models.Model):
+    technology_id			=       models.AutoField(primary_key=True, editable=False)
+    technology_name 		=       models.TextField(null=False,blank=False)
+    technology_description  =       models.TextField(null=True,blank=True)
+    technology_image        =       models.ImageField(upload_to=PROJECT_IMAGES_PATH,blank=True)
+    def __unicode__(self):
+        return unicode(self.technology_id)
+
+        
