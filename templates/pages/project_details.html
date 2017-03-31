@@ -12,25 +12,39 @@
                     {% endif %}
                     <table class="table ">
                         <tbody>
+                            {% if project.category %}
                             <tr><td><b>Category</b> : {{project.category.name}}</td></tr>
-                            <tr><td><b>Technologies Used</b> : 
+                            {% endif %}
+                            {% if project.technologies %}
+                            <tr><td><b>Technologies Used</b> :
                             {% for tech in project.technologies.all %}
                                 {{tech.name}}
                             {% endfor %}
                             </td></tr>
+                            {% endif %}
+                            {% if project.database_used %}
                             <tr><td><b>Database Used</b> : 
                             {% for db in project.database_used.all %}
                                 {{db.name}}
                             {% endfor %}
                             </td></tr>
+                            {% endif %}
+                            {% if project.production_link %}
                             <tr><td><b>Production Link</b> : {{project.production_link}}</td></tr>
+                            {% endif %}
+                            {% if project.dev_link %}
                             <tr><td><b>Dev Link</b> : {{project.dev_link}}</td></tr>
+                            {% endif %}
+                            {% if project.third_party_library %}
                             <tr><td><b>Third Party Libs used</b> : 
                             {% for lib in project.third_party_library.all %}
                                 {{lib.name}}
                             {% endfor %}
                             </td></tr>
+                            {% endif %}
+                            {% if project.version_control %}
                             <tr><td><b>Versioning</b> : {{project.version_control.name}}</td></tr>
+                            {% endif %}
                             <tr><td><b>Localization</b> : {% if project.localization %}Yes{% else %}No{% endif %}</td></tr>
                         </tbody>
                     </table>

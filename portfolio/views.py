@@ -9,7 +9,7 @@ def project_portfolio(request):
 	tech_list = Technology.objects.all()
 	data = {'projects':projects, 'tech_list':tech_list}
 	print data
-	return render(request, 'index.html', data)
+	return render(request, 'pages/index.html', data)
 
 def project_details(request, pid):
 	print 'project id : ', pid

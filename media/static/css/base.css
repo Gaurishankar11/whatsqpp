@@ -41,3 +41,6 @@ aside{
 .portfolio-box{
   width: 100%;
 }
+.carousel-inner .item img{
+  width: 100%;
+}
