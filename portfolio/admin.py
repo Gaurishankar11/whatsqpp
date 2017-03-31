@@ -4,13 +4,13 @@ from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.forms import CheckboxSelectMultiple
 from django.db import models
 # Register your models here.
-from models import Project, Technology,ProjectImage, Category, Database, Versioning
+from models import Project, Technology,ProjectImage, Category, Database, Versioning, Library
 
-class MyModelAdmin(admin.ModelAdmin):
+class MyModelAdmin(SortableAdmin):
     formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
 
-admin.site.register(Project, SortableAdmin)
-admin.site.register([Technology,ProjectImage,Category,Database])
+admin.site.register(Project,MyModelAdmin)
+admin.site.register([Technology,ProjectImage,Category,Database, Library])
 admin.site.register(Versioning)

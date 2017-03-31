@@ -5,9 +5,9 @@ from django.core.urlresolvers import resolve
 
 # Create your views here.
 def project_portfolio(request):
-	prj_obj_list = Project.objects.all()
+	projects = Project.objects.all()
 	tech_list = Technology.objects.all()
-	data = {'prj_obj_list':prj_obj_list, 'tech_list':tech_list}
+	data = {'projects':projects, 'tech_list':tech_list}
 	print data
 	return render(request, 'index.html', data)
 

@@ -12,37 +12,46 @@ DB_TYPES = (
 class Technology(models.Model):
     name = models.CharField(max_length=60)
     symbol = models.ImageField(upload_to=PROJECT_IMAGES_PATH,blank=True)
+    description = models.CharField(max_length=60, default="", null=True, blank = True)
+
     class Meta:
         verbose_name_plural = "Technologies"
+    
     def __unicode__(self):
         return unicode(self.name)
 
 class ProjectImage(models.Model):
     images = models.ImageField(upload_to=PROJECT_IMAGES_PATH)
+    
     def __unicode__(self):
         return unicode(self.images)
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
     status = models.BooleanField(max_length=20, default=False)
+    
     def __unicode__(self):
         return unicode(self.name)
 
 class Library(models.Model):
     name = models.CharField(max_length=20)
+    
     def __unicode__(self):
         return unicode(self.name)
 
 class Versioning(models.Model):
     name = models.CharField(max_length=20)
+    
     class Meta:
         verbose_name_plural = "Versioning"
+    
     def __unicode__(self):
         return unicode(self.name)
 
 class Database(models.Model):
     name = models.CharField(max_length=20)
     db_type = models.CharField(max_length=20,choices=DB_TYPES,default="Other")
+    
     def __unicode__(self):
         return unicode(self.name)
 
