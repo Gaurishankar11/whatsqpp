@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block main %}
     <section id="services" class="bg-primary">
         <div class="container main-container">
@@ -9,7 +9,7 @@
                         {% if project.logo %}
                         <img src="{{project.logo.url}}" class="thumbnail">
                         {% else %}
-                        <img src="{% static 'portfolio/img/no_image1.png' %}" height="235px" class="thumbnail">
+                        <img src="{% static 'portfolio/img/no_image.jpg' %}" height="235px" class="thumbnail">
                         {% endif %}
                     </div>
                     <table class="table ">

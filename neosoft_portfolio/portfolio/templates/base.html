@@ -10,11 +10,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Portfolio</title>
+    <title>Python | Portfolio</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{% static 'portfolio/css/bootstrap.min.css' %}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Custom Fonts -->
     <link href="{% static 'portfolio/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -45,7 +44,7 @@
                 <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button> -->
-                <a class="navbar-brand page-scroll" href="/">Portfolio</a>
+                <a class="navbar-brand page-scroll" href="{% url 'index' %}">Portfolio</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -94,6 +93,7 @@
 
     <!-- Theme JavaScript -->
     <script src="{% static 'portfolio/js/creative.min.js' %}"></script>
+    <script src="{% static 'portfolio/js/test.js' %}"></script>
 
 </body>
 

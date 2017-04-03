@@ -1,0 +1,23 @@
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		theme: "theme2",
+		title:{
+			text: "Gaming Consoles Sold in 2012"
+		},
+		data: [
+		{
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "{y} - #percent %",
+			yValueFormatString: "#0.#,,. Million",
+			legendText: "{indexLabel}",
+			dataPoints: [
+				{  y: 4181563, indexLabel: "PlayStation 3" },
+				{  y: 2175498, indexLabel: "Wii" },
+			]
+		}
+		]
+	});
+	chart.render();
+}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block main %}
     <header>
         <div class="header-content">
@@ -40,7 +40,7 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <!-- <i class="fa fa-4x fa-diamond text-primary sr-icons"></i> -->
-                        <img class="img-circle" src="{{tech.symbol}}">
+                        <img class="img-circle" src="{{tech.symbol.url}}">
                         <h3>{{tech.name}}</h3>
                         <p class="text-muted">{{tech.description}}</p>
                     </div>
@@ -50,6 +50,21 @@
             </div>
         </div>
     </section>
+    {% for cat in categoris%}
+    {{cat.name}}
+    {% endfor %}
+
+    <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+    <script src="{% static 'portfolio/js/test.js' %}"></script>
+    <script src="{% static 'portfolio/js/canvasjs.min.js' %}"></script>
+    <script language="javascript">
+    
+    var test_list = [
+            {  y: 4181563, indexLabel: "cat.name" },
+            {y:111111, indexLabel: "cat"}
+        ]
+   chartload(test_list);
+    </script>
 
     <section class="no-padding" id="portfolio">
         <div class="container">
@@ -62,10 +77,10 @@
         </div>
         <div class="container-fluid">
             <div class="row no-gutter">
-                {% for project in projects%}
+                {% for project in projects %}
                 <div class="col-lg-4 col-sm-6">
-                    <a href="{% url 'project_deails' project.id %}" class="portfolio-box">
-                        <img src="{{ project.images.all.0 }}" class="portfolio-box" alt="">
+                    <a href="{% url 'project_details' pid=project.id %}" class="portfolio-box">
+                        <img src="{{ project.images.all.0.images.url }}" class="portfolio-box" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">

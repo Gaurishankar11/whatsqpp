@@ -11,7 +11,7 @@ DB_TYPES = (
 
 
 class Technology(models.Model):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=60, unique=True)
     symbol = models.ImageField(blank=True)
     description = models.CharField(max_length=60, default="", null=True, blank = True)
 
@@ -28,7 +28,7 @@ class ProjectImage(models.Model):
         return unicode(self.images)
 
 class Category(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
     status = models.BooleanField(max_length=20, default=False)
 
     class Meta:
@@ -38,7 +38,7 @@ class Category(models.Model):
         return unicode(self.name)
 
 class Library(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
 
     class Meta:
         verbose_name_plural = "Libraries"
@@ -47,7 +47,7 @@ class Library(models.Model):
         return unicode(self.name)
 
 class Versioning(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
     
     class Meta:
         verbose_name_plural = "Versioning"
@@ -56,14 +56,14 @@ class Versioning(models.Model):
         return unicode(self.name)
 
 class Database(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
     db_type = models.CharField(max_length=20,choices=DB_TYPES,default="Other")
     
     def __unicode__(self):
         return unicode(self.name)
 
 class Project(SortableMixin):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=60, unique=True)
     description = RichTextField(default="Description of project")
     url = models.CharField(max_length=100)
     logo = models.ImageField(blank=True)
