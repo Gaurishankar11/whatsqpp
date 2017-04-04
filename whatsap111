@@ -1,0 +1,80 @@
+driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')
+from selenium import webdriver
+driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')
+driver.get('https://web.whatsapp.com/');
+inp_xpath = '//div[@class="infinite-list-viewport"]//div[@class="chat-status"]'
+msgs=inp_xpath = '//div[@class="infinite-list-viewport"]//div[@class="chat-status"]'
+msgs
+inp_xpath = '//div[@class="infinite-list-viewport"]//div[@class="chat-status"]'
+msgs = driver.find_elements_by_xpath(inp_xpath)
+msgs
+dir(msgs)
+msgs[0]
+dir(msgs[0])
+typr(msgs[0])
+type(msgs[0])
+dir(msgs[0])
+msgs[0].screenshot
+msgs[0].screenshot()
+msgs[0].screenshot('a')
+msgs[0].text
+
+inp_xpath = '//div[@class="infinite-list-item infinite-list-item-transition"]'
+msgs = driver.find_elements_by_xpath(inp_xpath)
+msgs
+driver.findElement(By.className("infinite-list-item infinite-list-item-transition")).click();
+msgs[0]
+msgs[0].click()
+msgs[1].click()
+msgs[3].click()
+msgs[0].click()
+msgs[2].click()
+inp_xpath = '//div[@class="infinite-list-item infinite-list-item-transition"]'
+msgs = driver.find_elements_by_xpath(inp_xpath)
+msgs[0].click()
+msgs[1].click()
+msgs[0].click()
+msgs[0].text
+msgs[3].text
+msgs[0].text
+msgs[1].text
+msgs[3].text
+msgs
+inp_xpath = '//div[@class="infinite-list-item infinite-list-item-transition"]'
+msgs = driver.find_elements_by_xpath(inp_xpath)
+msgs[0].text
+msgs[0].click()
+inp_xpath = '//div[@class="infinite-list-item infinite-list-item-transition"]//div[@class="bubble-image"]'
+photo = driver.find_elements_by_xpath(inp_xpath)
+photo
+inp_xpath = '//div[@class="bubble-image"]'
+photo = driver.find_elements_by_xpath(inp_xpath)
+photo
+for i in photo:
+	i.text
+inp_xpath = '//img[@class='image-thumb-body']/@src'
+inp_xpath = '//img[@class="image-thumb-body"]/@src'
+photo = driver.find_elements_by_xpath(inp_xpath)
+inp_xpath = '//img[@class="image-thumb-body"]/@src'
+photo = driver.find_elements_by_xpath(inp_xpath)
+inp_xpath = '//img[@class="image-thumb-body"]'
+photo = driver.find_elements_by_xpath(inp_xpath)
+photo
+for i photo:
+for i in photo:
+	i.text
+photo
+photo[2]
+photo[1]
+photo
+photo[0]
+dir(photo[0])
+photo[0].get_attribute('src')
+photo = driver.find_elements_by_xpath(inp_xpath)
+photo[0].get_attribute('src')
+photo
+inp_xpath = '//img[@class="image-thumb-body"]'
+photo = driver.find_elements_by_xpath(inp_xpath)
+photo
+import readline
+readline.write_history_file('whatsap111')
